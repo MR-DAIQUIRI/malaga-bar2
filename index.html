@@ -71,6 +71,7 @@ p{font-size:13px;line-height:1.7;color:var(--muted);}
 .consensus-banner p{font-size:12.5px;color:#2d6e3a;margin:0;}
 
 /* no consensus hint */
+.multi-hint{font-size:10.5px;color:var(--muted);background:var(--surface2,#f5f1eb);border-radius:4px;padding:4px 10px;margin-bottom:10px;display:inline-block;letter-spacing:.2px;}
 .no-consensus-hint{font-size:11px;color:var(--muted);background:var(--surface2);border-radius:4px;padding:6px 10px;margin-bottom:12px;display:inline-block;}
 
 /* option card */
@@ -989,8 +990,8 @@ const QUESTIONS = [
     id: 'participaciones',
     mountTo: 'q-participaciones',
     title: '¿Cómo se reparten las participaciones?',
-    type: 'single', // single = elige 1 · multi = elige varios
-    threshold: 3,
+    type: 'multi', // single = elige 1 · multi = elige varios
+    threshold: 4,
     options: [
       { id:'A', label:'Proporcional al capital aportado', desc:'Cholvis 31,25% · David 12,5% · Dani 18,75% · Renard 37,5%', authors:['david','salva','candido'] },
       { id:'B', label:'Participaciones iguales (20% cada uno)', desc:'Independientemente de la inversión', authors:['cholvis'] },
@@ -1002,8 +1003,8 @@ const QUESTIONS = [
     id: 'salarios',
     mountTo: 'q-salarios',
     title: '¿Cuándo empiezan los salarios?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Desde el mes 1 para socios full-time', desc:'', authors:['salva','cholvis'] },
       { id:'B', label:'Sin salario hasta viabilidad demostrada', desc:'', authors:['candido'] },
@@ -1015,8 +1016,8 @@ const QUESTIONS = [
     id: 'gasto',
     mountTo: 'q-gasto',
     title: '¿Hasta qué monto se puede gastar sin consultar?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Hasta 300 €', desc:'', authors:[] },
       { id:'B', label:'Hasta 500 €', desc:'', authors:['salva'] },
@@ -1030,8 +1031,8 @@ const QUESTIONS = [
     id: 'nombre',
     mountTo: 'q-nombre',
     title: '¿Cuál es el nombre del bar?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'1', label:'The Cold Shaker',             desc:'Inglés · coctelería + heladería',                  authors:['david'] },
       { id:'2', label:'Sherry Cobbler',               desc:'Inglés · cóctel clásico con jerez andaluz',       authors:['david'] },
@@ -1049,8 +1050,8 @@ const QUESTIONS = [
     id: 'iluminacion',
     mountTo: 'q-iluminacion',
     title: '¿Cómo es la iluminación?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Oscuro dominante — día y noche',                 desc:'Ambiente nocturno constante',            authors:['candido','dani'] },
       { id:'B', label:'Dual: claro de día / cálido y tenue de noche',   desc:'Transición gradual. ≤85dB',              authors:['david','cholvis','salva'] },
@@ -1063,7 +1064,7 @@ const QUESTIONS = [
     mountTo: 'q-materiales',
     title: '¿Qué materiales elegimos?',
     type: 'multi', // pueden votar varios
-    threshold: 3,
+    threshold: 4,
     options: [
       { id:'1', label:'Mármol blanco — protagonista',               desc:'Encimeras, barra, detalles',     authors:['david'] },
       { id:'2', label:'Terciopelo / imitación piel (NO mimbre)',     desc:'Asientos y banquetas',           authors:['david','salva'] },
@@ -1078,7 +1079,7 @@ const QUESTIONS = [
     mountTo: 'q-secciones-carta',
     title: '¿Qué secciones incluimos en la carta de cócteles?',
     type: 'multi',
-    threshold: 3,
+    threshold: 4,
     options: [
       { id:'1', label:'Twist on Classics',              desc:'Versiones propias de grandes clásicos', authors:[] },
       { id:'2', label:'Experimental / Signatures',      desc:'Cócteles únicos de autor',             authors:[] },
@@ -1091,8 +1092,8 @@ const QUESTIONS = [
     id: 'categoria-estrella',
     mountTo: 'q-categoria-estrella',
     title: '¿Cuál es la categoría estrella del back bar?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Vermut — estrella indiscutible',               desc:'',                                  authors:['candido','cholvis'] },
       { id:'B', label:'Sherry / Vinos de Jerez y Málaga',             desc:'Identidad andaluza',                authors:['salva','cholvis'] },
@@ -1107,7 +1108,7 @@ const QUESTIONS = [
     mountTo: 'q-comida',
     title: '¿Qué platos incluimos en la carta?',
     type: 'multi',
-    threshold: 3,
+    threshold: 4,
     options: [
       { id:'1', label:'Helados Casa Mira',                            desc:'Diferencial icónico · conexión histórica',          authors:['david'] },
       { id:'2', label:'Gildas y encurtidos premium',                  desc:'Aperitivo clásico · mínima preparación',           authors:['salva','cholvis'] },
@@ -1123,8 +1124,8 @@ const QUESTIONS = [
     id: 'uniformes',
     mountTo: 'q-uniformes',
     title: '¿Qué uniforme elegimos?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Opción Clásica (David A)',         desc:'Camisa rosada · corbata marrón · lab coat corta · pantalón marrón · zapatillas blancas',   authors:['david'] },
       { id:'B', label:'Opción Relajada (David B)',        desc:'Camiseta blanca · sobrecamisa bowling · pañuelo salmón/marrón/crema · pantalón marrón',   authors:['david'] },
@@ -1141,7 +1142,7 @@ const QUESTIONS = [
     mountTo: 'q-musica',
     title: '¿Qué géneros musicales queremos?',
     type: 'multi',
-    threshold: 3,
+    threshold: 4,
     options: [
       { id:'A', label:'Jazz / Bossa Nova',           desc:'Apertura · tarde',      authors:[] },
       { id:'B', label:'Funk / Soul / Disco',         desc:'Atardecer',              authors:[] },
@@ -1157,8 +1158,8 @@ const QUESTIONS = [
     id: 'rrss-gestion',
     mountTo: 'q-rrss-gestion',
     title: '¿Quién gestiona Instagram?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Cándido gestiona internamente',     desc:'Un socio asume la responsabilidad total',    authors:['candido'] },
       { id:'B', label:'Empresa especializada externa',     desc:'CM profesional contratado',                  authors:['cholvis'] },
@@ -1170,8 +1171,8 @@ const QUESTIONS = [
     id: 'rrss-plataformas',
     mountTo: 'q-rrss-plataformas',
     title: '¿En qué plataformas estamos?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Solo Instagram',       desc:'Foco total en una plataforma',           authors:['david'] },
       { id:'B', label:'Instagram + TikTok',   desc:'Mayor alcance, más producción de contenido', authors:['dani'] },
@@ -1185,8 +1186,8 @@ const QUESTIONS = [
     id: 'identidad-visual',
     mountTo: 'q-identidad-visual',
     title: '¿Cómo ejecutamos la identidad visual (logo, tipografía, señalética)?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Diseñador externo con brief detallado de socios', desc:'Máx. 1.000-2.000€ · Dirección clara de los socios', authors:['david','salva'] },
       { id:'B', label:'Socio interno + herramientas digitales', desc:'Cándido lidera, con aprobación unánime', authors:['candido'] },
@@ -1199,8 +1200,8 @@ const QUESTIONS = [
     id: 'voz-marca',
     mountTo: 'q-voz-marca',
     title: '¿Cuál es el tono de voz de la marca?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Formal y elegante', desc:'Minimalista, sin exceso, profesional', authors:['david','salva'] },
       { id:'B', label:'Mezcla formal + irreverente', desc:'Elegante pero con personalidad, nunca canallita', authors:['candido','cholvis'] },
@@ -1214,8 +1215,8 @@ const QUESTIONS = [
     id: 'interiorista',
     mountTo: 'q-interiorista',
     title: '¿Contratamos un interiorista profesional?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Sí, presupuesto máximo 2.000€', desc:'Proyecto completo con planos y visuales', authors:['david','salva'] },
       { id:'B', label:'Solo consulta/asesoría puntual', desc:'Consejo profesional sin proyecto completo', authors:['dani'] },
@@ -1229,8 +1230,8 @@ const QUESTIONS = [
     id: 'rotacion-carta',
     mountTo: 'q-rotacion-carta',
     title: '¿Con qué frecuencia rotamos la carta de cócteles?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Cada 4-6 meses', desc:'Renovación frecuente para fidelizar', authors:['david'] },
       { id:'B', label:'Anual con "Hall of Fame" para éxitos', desc:'Mínimo anual, los mejores permanecen', authors:['salva'] },
@@ -1244,8 +1245,8 @@ const QUESTIONS = [
     id: 'peso-comida',
     mountTo: 'q-peso-comida',
     title: '¿Qué porcentaje de ingresos objetivo para la comida?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'20-30% de los ingresos', desc:'La bebida es la estrella, la comida acompaña', authors:['david'] },
       { id:'B', label:'~45% de los ingresos', desc:'Fuerte apuesta en comida, máximo margen', authors:['cholvis'] },
@@ -1259,8 +1260,8 @@ const QUESTIONS = [
     id: 'cliente-principal',
     mountTo: 'q-cliente-principal',
     title: '¿Quién es nuestro cliente principal?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Malagueño foodie (primario) + turista (secundario)', desc:'Local primero, turismo como complemento', authors:['david','salva','cholvis'] },
       { id:'B', label:'Mix equilibrado de todos los perfiles', desc:'No priorizar uno sobre otro', authors:['dani'] },
@@ -1274,8 +1275,8 @@ const QUESTIONS = [
     id: 'peticiones-musica',
     mountTo: 'q-peticiones-musica',
     title: '¿Se aceptan peticiones musicales de clientes?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'No, rotundamente', desc:'Las playlists son fijas y curadas', authors:['david','candido'] },
       { id:'B', label:'Solo si encaja con el estilo del momento', desc:'A criterio del responsable de turno', authors:['cholvis','salva'] },
@@ -1288,8 +1289,8 @@ const QUESTIONS = [
     id: 'fecha-apertura',
     mountTo: 'q-fecha-apertura',
     title: '¿Cuál es la fecha objetivo de apertura?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Primera quincena mayo 2026', desc:'Lo antes posible', authors:['dani'] },
       { id:'B', label:'Segunda quincena mayo / primera junio', desc:'Realista si la obra va bien', authors:['salva','candido'] },
@@ -1301,8 +1302,8 @@ const QUESTIONS = [
     id: 'formato-soft-opening',
     mountTo: 'q-formato-soft-opening',
     title: '¿Cómo estructuramos el soft opening?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'3 fases: familia → industria → prensa (5 días)', desc:'Estructura por capas, máximo control', authors:['david'] },
       { id:'B', label:'Mix amigos/familia + industria, 1-2 noches', desc:'Más informal, una o dos tardes', authors:['dani'] },
@@ -1316,8 +1317,8 @@ const QUESTIONS = [
     id: 'decisiones',
     mountTo: 'q-decisiones',
     title: '¿Cómo votamos las decisiones importantes?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'Unanimidad (5/5) para todo',                       desc:'Máxima seguridad, menor agilidad',            authors:['cholvis','david'] },
       { id:'B', label:'Mayoría simple (3/5) para todo',                   desc:'Más ágil, menor seguridad',                   authors:['candido','dani'] },
@@ -1329,8 +1330,8 @@ const QUESTIONS = [
     id: 'permanencia',
     mountTo: 'q-permanencia',
     title: '¿Cuál es la permanencia mínima obligatoria?',
-    type: 'single',
-    threshold: 3,
+    type: 'multi',
+    threshold: 4,
     options: [
       { id:'A', label:'1 año mínimo', desc:'',    authors:['cholvis'] },
       { id:'B', label:'2 años mínimo', desc:'Posición de David', authors:['david'] },
@@ -1545,12 +1546,13 @@ const DataStore = {
   restore(snapshot) {
     if (!snapshot) return false;
 
-    // Restore votes
+    // Restore votes (normalise legacy string→array for old single-type saves)
     if (snapshot.voteState) {
       Object.keys(snapshot.voteState).forEach(qId => {
         if (voteState[qId]) {
           Object.keys(snapshot.voteState[qId]).forEach(pId => {
-            voteState[qId][pId] = snapshot.voteState[qId][pId];
+            const raw = snapshot.voteState[qId][pId];
+            voteState[qId][pId] = Array.isArray(raw) ? raw : (raw ? [raw] : []);
           });
         }
       });
@@ -1677,7 +1679,7 @@ const voteState = {}; // { questionId: { partnerId: optionId | [optionId,...] } 
 QUESTIONS.forEach(q => {
   voteState[q.id] = {};
   PARTNERS.forEach(p => {
-    voteState[q.id][p.id] = q.type === 'multi' ? [] : null;
+    voteState[q.id][p.id] = []; // all questions are multi-select
   });
 });
 
@@ -1687,12 +1689,12 @@ QUESTIONS.forEach(q => {
 function castVote(qId, pId, optId) {
   const q = QUESTIONS.find(x => x.id === qId);
   if (!q) return;
-  if (q.type === 'single') {
-    voteState[qId][pId] = voteState[qId][pId] === optId ? null : optId;
-  } else {
-    const arr = voteState[qId][pId];
+  // All questions use multi-select: toggle option in/out of array
+  const arr = voteState[qId][pId];
+  if (!Array.isArray(arr)) { voteState[qId][pId] = [optId]; }
+  else {
     const i = arr.indexOf(optId);
-    if (i >= 0) arr.splice(i,1); else arr.push(optId);
+    if (i >= 0) arr.splice(i, 1); else arr.push(optId);
   }
   renderAll();
 }
@@ -1705,12 +1707,10 @@ function getResult(qId) {
   q.options.forEach(o => counts[o.id] = 0);
 
   PARTNERS.forEach(p => {
-    const v = state[p.id];
-    if (q.type === 'single' && v !== null) {
-      counts[v] = (counts[v]||0)+1;
-    } else if (q.type === 'multi' && v.length) {
-      v.forEach(oid => counts[oid] = (counts[oid]||0)+1);
-    }
+    const raw = state[p.id];
+    // Normalise: handle legacy null/string from old single-type saves
+    const v = Array.isArray(raw) ? raw : (raw ? [raw] : []);
+    v.forEach(oid => { if (counts[oid] !== undefined) counts[oid]++; });
   });
 
   let maxVotes = 0, winner = null;
@@ -1720,7 +1720,7 @@ function getResult(qId) {
 
   const totalParticipating = PARTNERS.filter(p => {
     const v = state[p.id];
-    return q.type === 'single' ? v !== null : v.length > 0;
+    return Array.isArray(v) ? v.length > 0 : v !== null;
   }).length;
 
   return { counts, winner, maxVotes, hasConsensus: maxVotes >= q.threshold, totalParticipating };
@@ -1802,30 +1802,35 @@ function renderQuestion(q) {
   else if (result.maxVotes >= 3) tier = 1;  // mayoría simple
 
   const TIER = {
-    1: { cls:'consensus-majority',  icon:'✓',  badge:'MAYORÍA · 3/5 socios',           tallyClass:'tally-majority',  barClass:'bar-majority',  cardClass:'is-majority'  },
-    2: { cls:'consensus-strong',    icon:'★',  badge:'CONSENSO FUERTE · 4/5 socios ★', tallyClass:'tally-strong',    barClass:'bar-strong',    cardClass:'is-strong'    },
+    1: { cls:'consensus-majority',  icon:'✓',  badge:'MAYORÍA · 3/5 socios (sin consenso)',           tallyClass:'tally-majority',  barClass:'bar-majority',  cardClass:'is-majority'  },
+    2: { cls:'consensus-strong',    icon:'★',  badge:'CONSENSO · 4/5 socios ★', tallyClass:'tally-strong',    barClass:'bar-strong',    cardClass:'is-strong'    },
     3: { cls:'consensus-unanimous', icon:'🏆', badge:'UNANIMIDAD · 5/5 socios 🏆',      tallyClass:'tally-unanimous', barClass:'bar-unanimous', cardClass:'is-unanimous' },
   };
 
   let html = `<div class="vote-block">`;
   html += `<div class="vote-block-title"${editMode ? ' contenteditable="true" data-qedit-key="qt-' + q.id + '"' : ''}>${getQTitle(q)}</div>`;
+  html += `<div class="multi-hint">Selección múltiple · consenso al llegar a 4/5 socios en la misma opción</div>`;
 
   if (tier > 0) {
     const t = TIER[tier];
     const winOpt = q.options.find(o => o.id === result.winner);
+    const extraNote = tier === 1 ? `<div class="cb-note" style="font-size:11px;color:#92400E;margin-top:4px;opacity:.8">Falta 1 voto más para consenso (4/5)</div>` : '';
     html += `<div class="consensus-banner ${t.cls}">
       <div class="cb-icon">${t.icon}</div>
       <div class="cb-body">
         <div class="cb-badge">${t.badge}</div>
         <div class="cb-option">${winOpt?.label || ''}</div>
         <div class="cb-brief">${q.agencyBrief(winOpt?.label || '')}</div>
+        ${extraNote}
       </div>
     </div>`;
   } else {
-    const needed = 3 - result.maxVotes;
+    const needed = 4 - result.maxVotes;
     const msg = result.maxVotes === 0
-      ? `Sin votos todavía · Se necesitan al menos 3/5 socios en la misma opción`
-      : `Opción líder tiene ${result.maxVotes}/5 votos · Faltan ${needed} para mayoría`;
+      ? `Sin votos todavía · Se necesitan 4/5 socios en la misma opción para consenso`
+      : needed > 0
+        ? `Opción líder tiene ${result.maxVotes}/5 votos · Faltan ${needed} para consenso`
+        : `Consenso alcanzado`;
     html += `<div class="no-consensus-hint">${msg}</div>`;
   }
 
@@ -1853,9 +1858,8 @@ function renderQuestion(q) {
 
     html += `<div class="partner-row">`;
     PARTNERS.forEach(p => {
-      const voted = q.type === 'single'
-        ? voteState[q.id][p.id] === opt.id
-        : voteState[q.id][p.id].includes(opt.id);
+      const _pv = voteState[q.id][p.id];
+      const voted = Array.isArray(_pv) ? _pv.includes(opt.id) : _pv === opt.id;
       html += `<button
         class="pv-btn${voted?' voted':''}"
         style="--partner-color:${p.color}"
@@ -1916,8 +1920,8 @@ function renderResumen() {
     });
     const avg = count > 0 ? total / count : 0;
     const pct = (avg / PARTNERS.length) * 100;
-    const color = avg >= 3 ? 'var(--green)' : avg >= 2 ? 'var(--gold)' : 'var(--red)';
-    const label = avg >= 3 ? `${avg.toFixed(1)}/5 — Consenso` : avg >= 2 ? `${avg.toFixed(1)}/5 — Divergencia` : avg > 0 ? `${avg.toFixed(1)}/5 — Sin definir` : '— Sin votos';
+    const color = avg >= 4 ? 'var(--green)' : avg >= 3 ? 'var(--gold)' : avg >= 2 ? '#F97316' : 'var(--red)';
+    const label = avg >= 4 ? `${avg.toFixed(1)}/5 — Consenso` : avg >= 3 ? `${avg.toFixed(1)}/5 — Mayoría` : avg >= 2 ? `${avg.toFixed(1)}/5 — Divergencia` : avg > 0 ? `${avg.toFixed(1)}/5 — Sin definir` : '— Sin votos';
     html += `<div class="align-row">
       <div class="align-name">${s.label}</div>
       <div class="align-bar-wrap"><div class="align-bar" style="width:${pct}%;background:${color}"></div></div>
